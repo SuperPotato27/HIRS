@@ -3,6 +3,7 @@
 #    HIRS ACA Policy System Tests
 #
 #########################################################################################
+source ./.ci/system-tests/sys_test_common.sh
 testResult=false
 totalTests=0;
 failedTests=0;
@@ -18,7 +19,6 @@ case $1 in
     8) test="8" ;;
 esac
 
-source ./.ci/system-tests/sys_test_common.sh
 # Start ACA Policy Tests
 # provisionTpm2 takes 1 parameter (the expected result): "pass" or "fail"
 
@@ -77,6 +77,7 @@ fi
 #  Process Test Results, any single failure will send back a failed result.
 if [[ $failedTests != 0 ]]; then
     export TEST_STATUS=1;
+    echo "TEST_STATUS=1" >> $GITHUB_ENV
     echo "****  $failedTests out of $totalTests ACA Policy Tests Failed! ****"
   else
     echo "****  $totalTests ACA Policy Tests Passed! ****"
