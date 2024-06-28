@@ -89,19 +89,19 @@ provisionTpm2() {
     echo "==========="
     echo "$provisionOutput";
     echo "===========";
-  if [[ $provisionOutput == *"failed"* ]]; then
+  if [[ $provisionOutput == *"failed"* ]]; then  # provisioning failed
      if [[ $expected_result == "pass" ]]; then
         ((failedTests++))
         echo "!!! Provisioning failed, but was expected to pass."
      else
         echo "Provisioning failed as expected."
      fi
-  elif [[ $provisionOutput == *"successful"* ]]; then # provisioning succeeded
+  elif [[ $provisionOutput == *"Provisioning successful"* ]]; then # provisioning succeeded
      if [[ $expected_result == "fail" ]]; then
        ((failedTests++))
        echo "!!! Provisioning passed, but was expected to fail."
      else
-        echo "Provisioning passed as expected."
+        echo "Provisioning passed as expected."     
      fi
   else 
        ((failedTests++))
