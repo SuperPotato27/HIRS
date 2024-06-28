@@ -3,7 +3,6 @@
 #    HIRS ACA Policy System Tests
 #
 #########################################################################################
-source ./.ci/system-tests/sys_test_common.sh
 testResult=false
 totalTests=0;
 failedTests=0;
@@ -19,6 +18,7 @@ case $1 in
     8) test="8" ;;
 esac
 
+source ./.ci/system-tests/sys_test_common.sh
 # Start ACA Policy Tests
 # provisionTpm2 takes 1 parameter (the expected result): "pass" or "fail"
 

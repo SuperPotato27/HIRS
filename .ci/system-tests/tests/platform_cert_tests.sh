@@ -3,7 +3,6 @@
 #    HIRS Platform Certificate System Tests
 #
 #########################################################################################
-source ./.ci/system-tests/sys_test_common.sh
 testResult=false
 totalTests=0;
 failedTests=0;
@@ -14,6 +13,7 @@ case $1 in
     3) test="3" ;;
 esac
 
+source ./.ci/system-tests/sys_test_common.sh
 # Start ACA Platform Certificate Tests
 # provisionTpm2 takes 1 parameter (the expected result): "pass" or "fail"
 # Note that the aca_policy_tests have already run several Platform Certificate system tests
