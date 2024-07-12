@@ -43,10 +43,11 @@ jobs:
         working-directory: .ci/tcg-rim-tool/scripts
         run: |
           mkdir log
-          ./run_all_tests.sh > log/tcg-rim-results.log
+          ./run_all_tests.sh --verbose > log/tcg-rim-results.log
       - name: Uploading logs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
+          name: tcg-rim-tool-results
           path: .ci/tcg-rim-tool/scripts/log/*.log
 
 
