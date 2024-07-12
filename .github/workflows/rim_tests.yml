@@ -44,7 +44,7 @@ jobs:
         run: |
           ./run_all_tests.sh > log/tcg-rim-results.log
       - name: Uploading logs
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v2
         with:
           path: .ci/tcg-rim-tool/scripts/log/*.log
 
