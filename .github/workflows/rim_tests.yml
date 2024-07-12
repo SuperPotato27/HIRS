@@ -49,7 +49,7 @@ jobs:
         with:
           name: tcg-rim-tool-results
           path: .ci/tcg-rim-tool/scripts/log/*.log
-                .ci/tcg-rim-tool/configs/Base_Rim_Config.json
+
 
 
 
